@@ -21,8 +21,18 @@ class ViewController: UIViewController {
     }
 
     @IBAction func createAlert(_ sender: Any) {
+        
+        let alertController = UIAlertController(title: "Alert", message: "This is an Alert", preferredStyle: UIAlertControllerStyle.alert )
+        
+        alertController.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.default, handler: { (action) in
+            
+            print("Alert is dismissed")
+            
+            self.dismiss(animated:true, completion: nil);
+        }));
+    
+        self.present(alertController, animated: true, completion: nil)
     }
-
     
     @IBAction func pauseApp(_ sender: Any) {
     }
